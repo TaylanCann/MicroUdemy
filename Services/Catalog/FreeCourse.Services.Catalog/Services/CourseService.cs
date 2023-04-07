@@ -79,11 +79,11 @@ namespace FreeCourse.Services.Catalog.Services
             await _courseCollection.InsertOneAsync(newCourse);
             return Response<CourseDto>.Success(_mapper.Map<CourseDto>(_courseCollection),200);
         }
-        public async Task<Response<NoContent>> UpdateAsync(CourseCreateDto courseCreateDto)
+        public async Task<Response<NoContent>> UpdateAsync(CourseUpdateDto courseUpdateDto)
         {
-            var updateCourse = _mapper.Map<Course>(courseCreateDto);
+            var updateCourse = _mapper.Map<Course>(courseUpdateDto);
             
-            var result = await _courseCollection.FindOneAndReplaceAsync(x=>x.Id==courseCreateDto.Id, updateCourse);
+            var result = await _courseCollection.FindOneAndReplaceAsync(x=>x.Id== courseUpdateDto.Id, updateCourse);
 
             if (result == null)
             {
