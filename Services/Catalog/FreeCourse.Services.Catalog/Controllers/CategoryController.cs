@@ -13,11 +13,12 @@ namespace FreeCourse.Services.Catalog.Controllers
     public class CategoryController : CustomBaseController
     {
         private readonly ICategoryService _categoryService;
+        
         public CategoryController(ICategoryService categoryService)
         {
             _categoryService = categoryService;
         }
-
+        [HttpGet]
         public async Task<IActionResult> GetAll()
         {
             var response = await _categoryService.GetAllAsync();
