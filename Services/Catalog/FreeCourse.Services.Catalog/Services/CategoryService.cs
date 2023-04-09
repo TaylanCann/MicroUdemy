@@ -7,7 +7,7 @@ using MongoDB.Driver;
 
 namespace FreeCourse.Services.Catalog.Services
 {
-     class CategoryService : ICategoryService
+    public class CategoryService : ICategoryService
     {
         private readonly IMongoCollection<Category> _categoryCollection;
         private readonly IMapper _mapper;

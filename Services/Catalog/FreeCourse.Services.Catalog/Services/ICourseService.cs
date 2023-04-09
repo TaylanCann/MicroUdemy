@@ -4,7 +4,7 @@ using FreeCourse.Shared.Dtos;
 
 namespace FreeCourse.Services.Catalog.Services
 {
-     interface ICourseService
+    public interface ICourseService
     {
         Task<Response<List<CourseDto>>> GetAllAsync();
         Task<Response<CourseDto>> GetByIdAsync(string id);
