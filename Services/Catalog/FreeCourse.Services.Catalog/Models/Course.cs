@@ -6,7 +6,7 @@ namespace FreeCourse.Services.Catalog.Models
     public class Course
     {
         [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
+        [BsonRepresentation(BsonType.ObjectId)] 
         public string Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
@@ -19,7 +19,6 @@ namespace FreeCourse.Services.Catalog.Models
         [BsonRepresentation(BsonType.DateTime)]
         public DateTime CreatedTime { get; set; }
         
-        [BsonRepresentation(BsonType.ObjectId)]
         public Feature Feature { get; set; }
 
         [BsonRepresentation(BsonType.ObjectId)]
