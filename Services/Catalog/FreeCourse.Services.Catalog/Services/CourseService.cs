@@ -78,7 +78,7 @@ namespace FreeCourse.Services.Catalog.Services
             var newCourse = _mapper.Map<Course>(courseCreateDto);
             newCourse.CreatedTime = DateTime.Now;
             await _courseCollection.InsertOneAsync(newCourse);
-            return Response<CourseDto>.Success(_mapper.Map<CourseDto>(_courseCollection),200);
+            return Response<CourseDto>.Success(_mapper.Map<CourseDto>(newCourse),200);
         }
         public async Task<Response<NoContent>> UpdateAsync(CourseUpdateDto courseUpdateDto)
         {
