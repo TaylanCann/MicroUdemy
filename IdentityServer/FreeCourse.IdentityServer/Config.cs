@@ -18,6 +18,9 @@ namespace FreeCourse.IdentityServer
         public static IEnumerable<ApiScope> ApiScopes =>
             new ApiScope[]
             {
+                new ApiScope("catalog_fullpermission","Catalog API için full erişim"),
+                new ApiScope("photo_stock_fullpermission","Photo Stock API için full erişim"),
+                new ApiScope(,"Photo Stock API için full erişim"),
             };
 
         public static IEnumerable<Client> Clients =>
