@@ -79,7 +79,6 @@ namespace FreeCourse.IdentityServer
             }
 
             app.UseStaticFiles();
-
             app.UseRouting();
             app.UseIdentityServer();
             app.UseAuthentication();
