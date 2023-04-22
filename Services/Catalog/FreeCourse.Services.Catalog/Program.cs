@@ -26,7 +26,9 @@ builder.Services.AddSingleton<IDatabaseSettings>(sp =>
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
 {
-    options.Authority = Configuration["IdentityServerURL"],
+    options.Authority = builder.Configuration["IdentityServerURL"];
+    options.Audience = "resource_catalog";
+    options.RequireHttpsMetadata= false;
 });
 
 var app = builder.Build();
