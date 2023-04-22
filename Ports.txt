@@ -1,2 +1,3 @@
 Services 
 -CatalogAPI => "applicationUrl": "http://localhost:5170",
+-IdentityServer => "applicationUrl": "http://localhost:5001"
