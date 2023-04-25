@@ -46,6 +46,15 @@ namespace FreeCourse.IdentityServer
                     ClientSecrets = { new Secret("secret".Sha256()) },
                     AllowedGrantTypes = GrantTypes.ClientCredentials,
                     AllowedScopes = { "catalog_fullpermission","photo_stock_fullpermission", IdentityServerConstants.LocalApi.ScopeName }
+                },
+                new Client
+                {
+                    ClientId = "WebMvcClientForUser",
+                    ClientName = "Asp.Net Core MVC",
+                    ClientSecrets = { new Secret("secret".Sha256()) },
+                    AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
+                    AllowedScopes = {IdentityServerConstants.StandardScopes.Email, IdentityServerConstants.StandardScopes.OpenId, IdentityServerConstants.StandardScopes.Profile, IdentityServerConstants.StandardScopes.OfflineAccess,"roles"},
+                    AccessTokenLifetime=1*60*60
                 }
 
             };
