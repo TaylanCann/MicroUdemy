@@ -20,10 +20,10 @@ namespace FreeCourse.IdentityServer.Services
         {
             var existUser = await _userManager.FindByEmailAsync(context.UserName);
 
-            if (existUser != null)
+            if (existUser == null)
             {
                var errors = new Dictionary<string, object>();
-                errors.Add("errors", new List<string> { "Kullanıcı adı veya şifre yanlış" });
+                errors.Add("errors", new List<string> { "Kullanıcı adı yanlış" });
                 context.Result.CustomResponse = errors;
                 return;
             }
@@ -32,7 +32,7 @@ namespace FreeCourse.IdentityServer.Services
             if(!passwordCheck)
             {
                 var errors = new Dictionary<string, object>();
-                errors.Add("errors", new List<string> { "Kullanıcı adı veya şifre yanlış" });
+                errors.Add("errors", new List<string> { "şifre yanlış" });
                 context.Result.CustomResponse = errors;
                 return;
             }
