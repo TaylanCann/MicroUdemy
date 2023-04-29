@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Diagnostics;
+using Microsoft.IdentityModel.JsonWebTokens;
 using System.Linq;
 using System.Threading.Tasks;
 using static IdentityServer4.IdentityServerConstants;
@@ -48,11 +49,10 @@ namespace FreeCourse.IdentityServer.Controller
         [HttpGet]
         public async Task<IActionResult> GetUser()
         {
-            var userIdClaim = User.Claims.FirstOrDefault(x => x.Type == "sub");
-            if (userIdClaim==null)
-            {
-                return BadRequest();
-            }
+            var userIdClaim = User.Claims.FirstOrDefault(x => x.Type == JwtRegisteredClaimNames.Sub);
+           
+            if (userIdClaim==null) return BadRequest();
+            
             var user = await _userManager.FindByIdAsync(userIdClaim.Value);
             if (user==null)
             {
