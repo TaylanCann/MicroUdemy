@@ -1,4 +1,4 @@
 Services 
  -CatalogAPI => "applicationUrl": "http://localhost:5170",
- -photostockAPI => "applicationUrl": "http://localhost:5171",
+  -photostockAPI => "applicationUrl": "http://localhost:5171",
 IdentityServer => "applicationUrl": "http://localhost:5001"
