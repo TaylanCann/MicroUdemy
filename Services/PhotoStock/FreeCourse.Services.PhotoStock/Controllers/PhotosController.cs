@@ -1,4 +1,6 @@
-﻿using FreeCourse.Shared.ControllerBases;
+﻿using FreeCourse.Services.PhotoStock.Dtos;
+using FreeCourse.Shared.ControllerBases;
+using FreeCourse.Shared.Dtos;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -21,7 +23,12 @@ namespace FreeCourse.Services.PhotoStock.Controllers
                 }
 
                 var returnPath = "photos" + photo.FileName;
+
+                PhotoDto photoDto = new() { Url= returnPath };
+
+                return CreateActionResultInstance(Response<PhotoDto>.Success(photoDto,200));
             }
+            return CreateActionResultInstance(Response<PhotoDto>.Fail("Photo is empty", 400));
         }
     }
 }
