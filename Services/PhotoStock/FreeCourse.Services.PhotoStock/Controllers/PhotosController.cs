@@ -32,7 +32,7 @@ namespace FreeCourse.Services.PhotoStock.Controllers
             return CreateActionResultInstance(Response<PhotoDto>.Fail("Photo is empty", 400));
         }
 
-        public async Task<IActionResult> PhotoDelete(string photoUrl)
+        public IActionResult PhotoDelete(string photoUrl)
         {
             var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/photos", photoUrl);
 
