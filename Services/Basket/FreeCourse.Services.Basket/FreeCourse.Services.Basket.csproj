@@ -15,4 +15,8 @@
     <ProjectReference Include="..\..\..\Shared\FreeCourse.Shared\FreeCourse.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Contollers\" />
+  </ItemGroup>
+
 </Project>
