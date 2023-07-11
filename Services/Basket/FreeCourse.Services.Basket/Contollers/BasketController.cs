@@ -9,12 +9,12 @@ namespace FreeCourse.Services.Basket.Contollers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class BasketsController : CustomBaseController
+    public class BasketController : CustomBaseController
     {
         private readonly IBasketService _basketService;
         private readonly ISharedIdentityService _sharedIdentityService;
 
-        public BasketsController(IBasketService basketService, ISharedIdentityService sharedIdentityService)
+        public BasketController(IBasketService basketService, ISharedIdentityService sharedIdentityService)
         {
             _basketService = basketService;
             _sharedIdentityService = sharedIdentityService;
